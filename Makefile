@@ -17,7 +17,7 @@ sysinfo: env
 	@go build -o bin/$@ cmd/$@/main.go
 
 install: env
-	@echo "Installing sysinfo to $GOPATH/bin"
+	@echo "Installing sysinfo to $(GOPATH)/bin"
 	@go install ./cmd/sysinfo
 
 image: Dockerfile
@@ -26,7 +26,7 @@ image: Dockerfile
 
 clean:
 	@echo "Cleaning gotools binaries ..."
-	@rm -rf $GOPATH/bin/sysinfo
+	@rm -rf $(GOPATH)/bin/sysinfo
 	@rm -rf bin/sysinfo
 	@echo "Done."
 
